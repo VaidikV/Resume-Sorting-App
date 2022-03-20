@@ -1,7 +1,7 @@
 # Resume-Sorting-App
 Resume sorting application made entirely using Python and tkinter library. (Work in progress)
 
-##Libraries needed:
+## Libraries needed:
 ```
 pip install pdfminer        # python 2
 pip install pdfminer.six    # python 3
