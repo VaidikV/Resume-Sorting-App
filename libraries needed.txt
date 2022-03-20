@@ -1,18 +1,4 @@
----- TECH ----
-1) Omkar Pathak
-2) Mathew Eliot
-3) Ravi Patel
-
----- HR ----
-1) Pratik Kumar
-
----- MARKETING ----
-1) Aaron Smith
-
----- ACCOUNTING ----
-1) Rahul Deshpande
-
-Downloading necessary libraries:
+Download necessary libraries:
 
 pip install pdfminer        # python 2
 pip install pdfminer.six    # python 3
