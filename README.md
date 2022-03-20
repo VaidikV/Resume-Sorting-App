@@ -1,8 +1,18 @@
 # Resume-Sorting-App
 Resume sorting application made entirely using Python and tkinter library. (Work in progress)
 
+# Libraries needed:
+ `pip install pdfminer        # python 2
+pip install pdfminer.six    # python 3
+pip install spacy
+python -m spacy download en_core_web_sm
+pip install nltk
+python -m nltk nltk.download('words')
+pip install tkPDFViewer`
+
 Special thanks to [Omkar Pathak](https://omkarpathak.in/) whose resume parsing algorithm was referred to make this project possible.
 
+---
 
 **Screenshots:**
 
