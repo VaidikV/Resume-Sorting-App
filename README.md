@@ -1,5 +1,7 @@
 # Resume-Sorting-App
-Resume sorting application. (Work in progress)
+Resume sorting application made entirely using Python and tkinter library. (Work in progress)
+Special thanks to [Omkar Pathak](https://omkarpathak.in/) whose resume parsing algorithm was referred to make this project possible.
+
 
 **Screenshots:**
 
