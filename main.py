@@ -1,3 +1,6 @@
+# Vaidik Vadhavana - 21/03/2022 
+
+# Don't forget to add a valid path at line 81
 from resume_reader import ResumeReader
 from tkPDFViewer import tkPDFViewer as Pdf
 from tkinter import messagebox
@@ -75,7 +78,7 @@ def select_files():
     global selected_pdfs
     loading_window.pack()
     main_window.pack_forget()
-    window.filename = filedialog.askopenfilenames(initialdir=r"C:\Users\Vaidik\Documents", title="Select resumes",
+    window.filename = filedialog.askopenfilenames(initialdir=r"C:\Enter\your\path", title="Select resumes",
                                                   filetypes=(("pdf files", "*.pdf"), ("all files", "*.*")))
     selected_pdfs = list(window.filename)
     if not selected_pdfs:
