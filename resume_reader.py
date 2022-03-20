@@ -1,3 +1,7 @@
+# Vaidik Vadhavana - 21/03/2022
+
+# Refer libraries_needed.txt to download all the necessary libraries.
+
 from pdfminer.high_level import extract_text
 from nltk.corpus import stopwords
 from spacy.matcher import Matcher
