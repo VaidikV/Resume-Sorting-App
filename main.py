@@ -1,5 +1,6 @@
 # Vaidik Vadhavana - 21/03/2022 
 
+# Refer "libraries_needed.txt" to download all the necessary libraries.
 # Don't forget to add a valid path at line 81
 from resume_reader import ResumeReader
 from tkPDFViewer import tkPDFViewer as Pdf
