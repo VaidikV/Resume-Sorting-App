@@ -1,9 +1,9 @@
 # Resume-Sorting-App
 Resume sorting application. (Work in progress)
 
-Screenshots:
+**Screenshots:**
 
-![image](https://user-images.githubusercontent.com/63895478/159186209-ae621cb4-d3a9-443c-a37d-cb8f8f39da7e.png)
+![image](https://user-images.githubusercontent.com/63895478/159186344-692a9b81-4032-420f-bbbb-b66c7b80621b.png)
 
 ![image](https://user-images.githubusercontent.com/63895478/159186238-46293419-4b20-4c91-802e-591784ae4320.png)
 
