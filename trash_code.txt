@@ -1,0 +1,84 @@
+-----------------------------------------------------------------
+Libraries:
+
+from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+import io
+from pdfminer.converter import TextConverter
+import pdfminer
+---------------------------------------------------------------
+For extracting text:
+
+# print(raw_text)
+# def extract_text_from_pdf(pdf_path):
+#     with open(pdf_path, 'rb') as fh:
+#         # iterate over all pages of PDF document
+#         for page in PDFPage.get_pages(fh, caching=True, check_extractable=True):
+#             # creating a resource manager
+#             resource_manager = PDFResourceManager()
+#
+#             # create a file handle
+#             fake_file_handle = io.StringIO()
+#
+#             # creating a text converter object
+#             converter = TextConverter(
+#                 resource_manager,
+#                 fake_file_handle,
+#                 laparams=LAParams()
+#             )
+#
+#             # creating a page interpreter
+#             page_interpreter = PDFPageInterpreter(
+#                 resource_manager,
+#                 converter
+#             )
+#
+#             # process current page
+#             page_interpreter.process_page(page)
+#
+#             # extract text
+#             pdf_text = fake_file_handle.getvalue()
+#             yield pdf_text
+#
+#             # close open handles
+#             converter.close()
+#             fake_file_handle.close()
+
+# raw_text = ""
+# calling above function and extracting text
+# for each_page in extract_text_from_pdf(RESUME_PDF_PATH):
+#     raw_text += "" + each_page
+
+----------------------------------------------------------------------------
+# For getting human names (another method which doesn't seem to work that well):
+def get_human_names(text):
+    tokens = nltk.tokenize.word_tokenize(text)
+    pos = nltk.pos_tag(tokens)
+    sentt = nltk.ne_chunk(pos, binary=False)
+
+    person = []
+    name = ""
+    for subtree in sentt.subtrees(filter=lambda t: t.label() == 'PERSON'):
+        for leaf in subtree.leaves():
+            person.append(leaf[0])
+        if len(person) > 1:  # avoid grabbing lone surnames
+            for part in person:
+                name += part + ' '
+            if name[:-1] not in person_list:
+                person_list.append(name[:-1])
+            name = ''
+        person = []
+
+
+names = get_human_names(raw_text)
+for person in person_list:
+    person_split = person.split(" ")
+    for name in person_split:
+        if wordnet.synsets(name):
+            if (name in person):
+                person_names.remove(person)
+                break
+
+print(person_names)
+-----------------------------------------------------------------------------
