@@ -16,8 +16,7 @@ Special thanks to [Omkar Pathak](https://omkarpathak.in/) whose resume parsing a
 ---
 
 **Screenshots:**
-
-![image](https://user-images.githubusercontent.com/63895478/159186344-692a9b81-4032-420f-bbbb-b66c7b80621b.png)
+![Home Page](https://user-images.githubusercontent.com/63895478/165809831-753648aa-5237-495f-9aa1-e8908dc8aac7.png)
 
 ![image](https://user-images.githubusercontent.com/63895478/159186238-46293419-4b20-4c91-802e-591784ae4320.png)
 
