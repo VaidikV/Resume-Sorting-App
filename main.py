@@ -1,14 +1,18 @@
 # Vaidik Vadhavana - 21/03/2022 
+# Last update - 28/04/2022
 
 # Refer "libraries_needed.txt" to download all the necessary libraries.
-# Add a valid directory path at line 82
+# Add a valid directory path at line 85
+import time
+
 from resume_reader import ResumeReader
 from tkPDFViewer import tkPDFViewer as Pdf
 from tkinter import messagebox
 from tkinter import filedialog
 from tkinter import *
+from PIL import Image, ImageTk
 
-FONT = ("Ariel", 14, "normal")
+FONT = ("Ariel", 20, "bold")
 BTN_FONT = ("Ariel", 12, "normal")
 BACKGROUND_COLOR = "#EEF2FF"
 PRIMARY_BTN = "#1C658C"
@@ -79,7 +83,7 @@ def select_files():
     global selected_pdfs
     loading_window.pack()
     main_window.pack_forget()
-    window.filename = filedialog.askopenfilenames(initialdir=r"C:\Enter\your\path", title="Select resumes",
+    window.filename = filedialog.askopenfilenames(initialdir=r"C:\enter\your\path", title="Select resumes",
                                                   filetypes=(("pdf files", "*.pdf"), ("all files", "*.*")))
     selected_pdfs = list(window.filename)
     if not selected_pdfs:
@@ -127,8 +131,8 @@ def sorting_resume_load_screen():
 def view_sorted_resumes():
     results.pack()
 
-    results_head = Label(results, text=f"Resumes sorted according to {domain} domain.",
-                         bg=BACKGROUND_COLOR, font=("times new roman", 22, "bold"), fg=FONT_FG, wraplength=600)
+    results_head = Label(results, text=f"Resumes sorted according to {domain} domain.\n\n",
+                         bg=BACKGROUND_COLOR, font=("times new roman", 22, "bold"), fg=FONT_FG)
     results_head.grid(row=0, column=0, padx=20)
 
     back = Button(results, text="Back", command=back_to_main, bg=SECONDARY_BTN, fg="white", width=15,
@@ -150,9 +154,12 @@ def view_sorted_resumes():
 window = Tk()
 window.title("Resume Parser")
 window.config(padx=30, pady=30, bg=BACKGROUND_COLOR)
-# window.geometry("600x500")
-window.geometry("+300+100")
+window.geometry("1100x800")
+window.geometry("+100+0")
 window.iconbitmap("logo.ico")
+image = Image.open("sorting_process.png")
+resize_image = image.resize((400, 400))
+window.state("zoomed")
 
 # --------- FRAMES ---------
 main_window = Frame(window, bg=BACKGROUND_COLOR)  # F1
@@ -162,35 +169,50 @@ results = Frame(window, bg=BACKGROUND_COLOR)  # F3
 
 # --------- FRAME [1] (MAIN WINDOW) ---------
 # [1] LOGO
-canvas = Canvas(main_window, width=150, height=150, bg=BACKGROUND_COLOR)
+canvas = Canvas(main_window, width=600, height=500, bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.pack()
-img = PhotoImage(file="logo.png")
-canvas.create_image(75, 75, image=img)
-canvas.grid(row=0, column=0, columnspan=2)
+img = ImageTk.PhotoImage(resize_image)
+canvas.create_image(200, 350, image=img)
+canvas.grid(row=0, column=0, rowspan=3)
 
 # [1] LABELS
-welcome_screen_head = Label(main_window, text="Hire-me!", bg=BACKGROUND_COLOR,
-                            font=("times new roman", 22, "bold"), fg=FONT_FG)
-welcome_screen_head.grid(row=1, column=0, columnspan=2)
+# welcome_screen_head = Label(main_window, text="Hire-me!", bg=BACKGROUND_COLOR,
+#                             font=("times new roman", 22, "bold"), fg=FONT_FG)
+# welcome_screen_head.grid(row=1, column=0, columnspan=2)
 
-welcome_screen_slogan = Label(main_window, text="A powerful resume parser.", bg=BACKGROUND_COLOR,
-                              font=FONT, fg=FONT_FG)
-welcome_screen_slogan.grid(row=2, column=0, columnspan=2)
+# welcome_screen_slogan = Label(main_window, text="A powerful resume parser.", bg=BACKGROUND_COLOR,
+#                               font=FONT, fg=FONT_FG)
+# welcome_screen_slogan.grid(row=2, column=0, columnspan=2)
 
 welcome_screen_start = Label(main_window, text="Choose a domain:",
-                             bg=BACKGROUND_COLOR, font=FONT, pady=40, fg=FONT_FG, wraplength=410)
-welcome_screen_start.grid(row=3, column=0, columnspan=2)
+                             bg=BACKGROUND_COLOR, font=FONT, fg=FONT_FG, anchor=S, height=9)
+welcome_screen_start.grid(row=0, column=1, columnspan=2)
 
 # [1] BUTTONS
 tech_sort = Button(main_window, text="Technology", command=tech, bg=SECONDARY_BTN, fg="white", width=15,
                    font=BTN_FONT)
-tech_sort.grid(row=4, column=0, padx=10)
+tech_sort.grid(row=1, column=1, padx=10)
 
 hr_sort = Button(main_window, text="Human Resources", command=hr, bg=SECONDARY_BTN, fg="white", width=15,
                  font=BTN_FONT)
-hr_sort.grid(row=4, column=1, padx=10)
+hr_sort.grid(row=1, column=2, padx=10)
 
 acc_sort = Button(main_window, text="Accounting", command=acc, bg=SECONDARY_BTN, fg="white", width=15,
+                  font=BTN_FONT)
+acc_sort.grid(row=2, column=1)
+
+mkt_sort = Button(main_window, text="Marketing", command=mkt, bg=SECONDARY_BTN, fg="white", width=15,
+                  font=BTN_FONT)
+mkt_sort.grid(row=2, column=2)
+
+# --------- FRAME [2] (LOADING WINDOW) ---------
+loading = Label(loading_window, text="Sorting selected resumes. Please wait...",
+                bg=BACKGROUND_COLOR, font=("times new roman", 22, "bold"), fg=FONT_FG)
+loading.grid(row=0, column=0, pady=300)
+
+main_window.pack()
+window.mainloop()
+
                   font=BTN_FONT)
 acc_sort.grid(row=5, column=0)
 
