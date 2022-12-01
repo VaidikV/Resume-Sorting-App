@@ -20,7 +20,6 @@ pip install nltk
 python -m nltk nltk.download('words')
 pip install tkPDFViewer
 ```
-Special thanks to [Omkar Pathak](https://omkarpathak.in/) whose resume parsing algorithm was referred to make this project possible.
 
 ---
 
