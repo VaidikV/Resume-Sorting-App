@@ -1,5 +1,5 @@
 # Resume-Sorting-App
-Resume sorting application made entirely using Python and tkinter library. (Work in progress)
+Resume sorting application made entirely using Python and tkinter library. 
 
 ## Made By:
 - Vaidik Vadhavana
