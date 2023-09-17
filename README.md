@@ -1,5 +1,6 @@
 # Resume-Sorting-App
-Resume sorting application made entirely using Python and tkinter library. 
+A a versatile resume sorting application made using Python and tkinter GUI that leverages natural language processing
+(NLP) techniques to efficiently categorize resumes based on their domains.
 
 ## Made By:
 - Vaidik Vadhavana
