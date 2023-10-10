@@ -8,7 +8,7 @@ A a versatile resume sorting application made using Python and tkinter GUI that 
 - Abhishek Tiwari
 
 Under Guidance of:
-Prof. 
+Prof. Suchita Dange
 
 ## Libraries needed:
 ```
