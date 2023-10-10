@@ -1,16 +1,18 @@
-# Vaidik Vadhavana - 21/03/2022 
-# Last update - 28/04/2022
-
 # Refer "libraries_needed.txt" to download all the necessary libraries.
 # Add a valid directory path at line 85
-import time
+
+import nltk
+
+nltk.download('stopwords')
+
+from tkinter import *
+from tkinter import filedialog
+from tkinter import messagebox
+
+from PIL import Image, ImageTk
+from tkPDFViewer import tkPDFViewer as Pdf
 
 from resume_reader import ResumeReader
-from tkPDFViewer import tkPDFViewer as Pdf
-from tkinter import messagebox
-from tkinter import filedialog
-from tkinter import *
-from PIL import Image, ImageTk
 
 FONT = ("Ariel", 20, "bold")
 BTN_FONT = ("Ariel", 12, "normal")
@@ -213,7 +215,6 @@ loading.grid(row=0, column=0, pady=300)
 main_window.pack()
 window.mainloop()
 
-                  font=BTN_FONT)
 acc_sort.grid(row=5, column=0)
 
 mkt_sort = Button(main_window, text="Marketing", command=mkt, bg=SECONDARY_BTN, fg="white", width=15,

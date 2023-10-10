@@ -4,12 +4,11 @@ A a versatile resume sorting application made using Python and tkinter GUI that 
 
 ## Made By:
 - Vaidik Vadhavana
-- Sejal Yadav
-- Shriya Vidwans
-- Om Walanju
+- Abhay Sharma
+- Abhishek Tiwari
 
 Under Guidance of:
-Prof. Tanvi Kapdi
+Prof. 
 
 ## Libraries needed:
 ```

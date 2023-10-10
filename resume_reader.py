@@ -1,4 +1,4 @@
-# Vaidik Vadhavana - 21/03/2022
+# Vaidik Vadhavana
 
 # Refer "libraries_needed.txt" to download all the necessary libraries.
 
@@ -7,6 +7,8 @@ from nltk.corpus import stopwords
 from spacy.matcher import Matcher
 import spacy
 import re
+
+
 
 
 # ----------------------------------- EXTRACTING INFO FROM PDF -----------------------------------
