@@ -2,14 +2,6 @@
 A a versatile resume sorting application made using Python and tkinter GUI that leverages natural language processing
 (NLP) techniques to efficiently categorize resumes based on their domains.
 
-## Made By:
-- Vaidik Vadhavana
-- Abhay Sharma
-- Abhishek Tiwari
-
-Under Guidance of:
-Prof. Suchita Dange
-
 ## Libraries needed:
 ```
 pip install pdfminer        # python 2
